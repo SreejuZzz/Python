@@ -3,50 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document Viewer | four.pdf</title>
+    <title>Document Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .pdf-container { height: 70vh; }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 2rem;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
     </style>
 </head>
-<body class="bg-gray-50 font-sans text-gray-900">
+<body class="p-6">
 
-    <div class="max-w-4xl mx-auto px-4 py-12">
-        <!-- Header -->
-        <header class="text-center mb-10">
-            <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 mb-4">
-                View Document
-            </h1>
-            <p class="text-lg text-gray-600">Reviewing: <span class="font-mono font-semibold">four.pdf</span></p>
-        </header>
-
-        <!-- Action Buttons -->
-        <div class="flex justify-center gap-4 mb-8">
-            <a href="four.pdf" download class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition duration-200">
-                Download PDF
-            </a>
-            <a href="four.pdf" target="_blank" class="bg-white border border-gray-300 hover:bg-gray-100 text-gray-700 font-bold py-3 px-8 rounded-lg shadow transition duration-200">
-                Open in Fullscreen
-            </a>
-        </div>
-
-        <!-- PDF Preview Card -->
-        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
-            <div class="pdf-container">
-                <object data="four.pdf" type="application/pdf" width="100%" height="100%">
-                    <div class="flex flex-col items-center justify-center h-full p-10 text-center">
-                        <p class="text-gray-500 mb-4">It looks like your browser doesn't support embedded PDFs.</p>
-                        <a href="four.pdf" class="text-blue-600 underline">Click here to view the file directly.</a>
-                    </div>
-                </object>
+    <!-- Content Container -->
+    <main class="glass-card p-10 md:p-16 text-center max-w-lg w-full transition-all duration-500 hover:scale-[1.02]">
+        
+        <!-- Animated Icon -->
+        <div class="floating mb-8 inline-block">
+            <div class="bg-white/20 p-6 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
             </div>
         </div>
 
-        <!-- Footer -->
-        <footer class="mt-12 text-center text-gray-400 text-sm">
-            Hosted via GitHub Pages
-        </footer>
-    </div>
+        <h1 class="text-4xl font-bold text-white mb-2 tracking-tight">
+            four.pdf
+        </h1>
+        <p class="text-white/70 mb-10 text-lg">
+            Ready for viewing and download
+        </p>
+
+        <!-- The Button -->
+        <a href="four.pdf" target="_blank" class="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-200 bg-white/10 border-2 border-white/50 rounded-xl hover:bg-white hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+            <span class="mr-3">Open Document</span>
+            <svg class="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+        </a>
+
+        <div class="mt-12 pt-8 border-t border-white/10">
+            <p class="text-xs text-white/40 uppercase tracking-widest font-semibold">
+                Cloud Secure Access
+            </p>
+        </div>
+    </main>
 
 </body>
 </html>
