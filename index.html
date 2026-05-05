@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Viewer | four.pdf</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .pdf-container { height: 70vh; }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-900">
+
+    <div class="max-w-4xl mx-auto px-4 py-12">
+        <!-- Header -->
+        <header class="text-center mb-10">
+            <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 mb-4">
+                View Document
+            </h1>
+            <p class="text-lg text-gray-600">Reviewing: <span class="font-mono font-semibold">four.pdf</span></p>
+        </header>
+
+        <!-- Action Buttons -->
+        <div class="flex justify-center gap-4 mb-8">
+            <a href="four.pdf" download class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition duration-200">
+                Download PDF
+            </a>
+            <a href="four.pdf" target="_blank" class="bg-white border border-gray-300 hover:bg-gray-100 text-gray-700 font-bold py-3 px-8 rounded-lg shadow transition duration-200">
+                Open in Fullscreen
+            </a>
+        </div>
+
+        <!-- PDF Preview Card -->
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
+            <div class="pdf-container">
+                <object data="four.pdf" type="application/pdf" width="100%" height="100%">
+                    <div class="flex flex-col items-center justify-center h-full p-10 text-center">
+                        <p class="text-gray-500 mb-4">It looks like your browser doesn't support embedded PDFs.</p>
+                        <a href="four.pdf" class="text-blue-600 underline">Click here to view the file directly.</a>
+                    </div>
+                </object>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-12 text-center text-gray-400 text-sm">
+            Hosted via GitHub Pages
+        </footer>
+    </div>
+
+</body>
+</html>
