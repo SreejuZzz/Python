@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document Hub</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
@@ -17,21 +18,21 @@
             background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
             background-size: 400% 400%;
             animation: gradient 15s ease infinite;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
             margin: 0;
+            padding: 20px;
         }
 
         .glass-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255,255,255,0.1);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255,255,255,0.2);
             border-radius: 2rem;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.37);
         }
 
         .floating {
@@ -44,84 +45,155 @@
             100% { transform: translateY(0px); }
         }
     </style>
+
 </head>
 
-<body class="p-6">
+<body>
 
-    <main class="glass-card p-10 md:p-16 text-center max-w-lg w-full transition-all duration-500 hover:scale-[1.02]">
+<main class="glass-card p-8 md:p-12 text-center max-w-2xl w-full transition-all duration-500 hover:scale-[1.02]">
 
-        <!-- Animated Icon -->
-        <div class="floating mb-8 inline-block">
-            <div class="bg-white/20 p-6 rounded-full">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                     width="48"
-                     height="48"
-                     viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="white"
-                     stroke-width="2"
-                     stroke-linecap="round"
-                     stroke-linejoin="round">
-                    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
-                    <polyline points="14 2 14 8 20 8"></polyline>
-                </svg>
-            </div>
+    <!-- Icon -->
+    <div class="floating mb-8 inline-block">
+
+        <div class="bg-white/20 p-6 rounded-full">
+
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 width="48"
+                 height="48"
+                 viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="white"
+                 stroke-width="2"
+                 stroke-linecap="round"
+                 stroke-linejoin="round">
+
+                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+
+            </svg>
+
         </div>
 
-        <h1 class="text-4xl font-bold text-white mb-2 tracking-tight">
-            Document Hub
-        </h1>
+    </div>
 
-        <p class="text-white/70 mb-10 text-lg">
-            Choose a document to open
+
+    <h1 class="text-4xl font-bold text-white mb-2">
+        Document Hub
+    </h1>
+
+
+    <p class="text-white/70 mb-8 text-lg">
+        Choose an exam to open
+    </p>
+
+
+
+    <!-- Exam Buttons -->
+
+    <div class="grid grid-cols-2 gap-4">
+
+
+        <a href="one.pdf" target="_blank" class="exam-btn">
+            Open Exam 1
+        </a>
+
+        <a href="two.pdf" target="_blank" class="exam-btn">
+            Open Exam 2
+        </a>
+
+        <a href="three.pdf" target="_blank" class="exam-btn">
+            Open Exam 3
+        </a>
+
+        <a href="four.pdf" target="_blank" class="exam-btn">
+            Open Exam 4
+        </a>
+
+        <a href="five.pdf" target="_blank" class="exam-btn">
+            Open Exam 5
+        </a>
+
+        <a href="six.pdf" target="_blank" class="exam-btn">
+            Open Exam 6
+        </a>
+
+        <a href="seven.pdf" target="_blank" class="exam-btn">
+            Open Exam 7
+        </a>
+
+        <a href="eight.pdf" target="_blank" class="exam-btn">
+            Open Exam 8
+        </a>
+
+        <a href="nine.pdf" target="_blank" class="exam-btn">
+            Open Exam 9
+        </a>
+
+        <a href="ten.pdf" target="_blank" class="exam-btn">
+            Open Exam 10
+        </a>
+
+        <a href="eleven.pdf" target="_blank" class="exam-btn">
+            Open Exam 11
+        </a>
+
+        <a href="twelve.pdf" target="_blank" class="exam-btn">
+            Open Exam 12
+        </a>
+
+
+    </div>
+
+
+
+    <div class="mt-10 pt-6 border-t border-white/10">
+
+        <p class="text-xs text-white/40 uppercase tracking-widest font-semibold">
+            Cloud Secure Access
         </p>
 
-        <!-- Document Buttons -->
-        <div class="flex flex-col gap-4">
+    </div>
 
-            <!-- PDF -->
-            <a href="four.pdf"
-               target="_blank"
-               class="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-200 bg-white/10 border-2 border-white/50 rounded-xl hover:bg-white hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
-                <span class="mr-3">Open four.pdf</span>
-                <svg class="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1"
-                     fill="none"
-                     stroke="currentColor"
-                     viewBox="0 0 24 24">
-                    <path stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M14 5l7 7m0 0l-7 7m7-7H3">
-                    </path>
-                </svg>
-            </a>
 
-            <!-- HTML -->
-            <a href="Five.pdf"
-               target="_blank"
-               class="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-200 bg-white/10 border-2 border-white/50 rounded-xl hover:bg-white hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
-                <span class="mr-3">Open exam Five</span>
-                <svg class="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1"
-                     fill="none"
-                     stroke="currentColor"
-                     viewBox="0 0 24 24">
-                    <path stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M14 5l7 7m0 0l-7 7m7-7H3">
-                    </path>
-                </svg>
-            </a>
+</main>
 
-        </div>
 
-        <div class="mt-12 pt-8 border-t border-white/10">
-            <p class="text-xs text-white/40 uppercase tracking-widest font-semibold">
-                Cloud Secure Access
-            </p>
-        </div>
 
-    </main>
+<style>
+
+.exam-btn {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 16px;
+
+    font-weight: bold;
+    color: white;
+
+    background: rgba(255,255,255,0.1);
+
+    border: 2px solid rgba(255,255,255,0.5);
+
+    border-radius: 14px;
+
+    transition: all 0.25s ease;
+
+}
+
+
+.exam-btn:hover {
+
+    background: white;
+    color: #111827;
+
+    transform: translateY(-3px);
+
+}
+
+</style>
+
 
 </body>
 </html>
